@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Listado de datos</h1>
+    <table>
+    <tr>
+        <td>Nombre</td>
+        <td>Apellido</td>
+    </tr>
+    <tr>
+        <td>Francisco</td>
+        <td>Morales</td>
+    </tr>
+</table>
+<a href="{% url 'home:homeapp' %}">Home</a>
+<a href="{% url 'home:crearEstP' %}">Insertar</a>
+<a href="{% url 'home:crearEstAapp' %}">Insertar Autorización</a>
+<a href="{% url 'home:crearArtapp' %}">Insertar Artículo</a>
+<a href="{% url 'home:crearPubapp' %}">Insertar Publicación</a>
+<a href="{% url 'home:crearComeapp' %}">Insertar Comentario</a>
+{% endblock %}
