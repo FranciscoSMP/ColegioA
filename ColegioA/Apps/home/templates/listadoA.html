@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h1>Listado de datos</h1>
+<table>
+    <tr>
+        <td> Carne </td>
+        <td> Nombre </td>
+        <td>Apellido</td>
+    </tr>
+    {% for Autorizacion in estudiantesautorizaciones_list %}
+    <tr>
+        <td>{{Autorizacion.carne}}</td>
+        <td>{{Autorizacion.nombre}}</td>
+        <td>{{Autorizacion.apellido}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'home:listadoapp' %}">Listado</a>
+{% endblock %}

@@ -1,16 +1,20 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-    <h1>Listado de datos</h1>
-    <table>
+<h1>Listado de datos</h1>
+<table>
     <tr>
-        <td>Nombre</td>
+        <td> Carne </td>
+        <td> Nombre </td>
         <td>Apellido</td>
     </tr>
+    {% for Publicar in estudiantespublicaciones_list %}
     <tr>
-        <td>Francisco</td>
-        <td>Morales</td>
+        <td>{{Publicar.carne}}</td>
+        <td>{{Publicar.nombre}}</td>
+        <td>{{Publicar.apellido}}</td>
     </tr>
+    {% endfor %}
 </table>
 <a href="{% url 'home:homeapp' %}">Home</a>
 <a href="{% url 'home:crearEstP' %}">Insertar</a>
@@ -18,4 +22,11 @@
 <a href="{% url 'home:crearArtapp' %}">Insertar Artículo</a>
 <a href="{% url 'home:crearPubapp' %}">Insertar Publicación</a>
 <a href="{% url 'home:crearComeapp' %}">Insertar Comentario</a>
+<p>
+    <a href="{% url 'home:listadoAapp' %}">Listar Autorizaciones</a>
+    <a href="{% url 'home:listadoCapp' %}">Listar Comentarios</a>
+    <a href="{% url 'home:listadoArtiapp' %}">Listar Artículos</a>
+    <a href="{% url 'home:listadoPapp' %}">Listar Publicaciones</a>
+</p>
+
 {% endblock %}

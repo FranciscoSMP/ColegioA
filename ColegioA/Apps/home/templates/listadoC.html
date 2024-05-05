@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h1>Listado de datos</h1>
+<table>
+    <tr>
+        <td> Artículo </td>
+        <td> Comentario </td>
+        <td>Comenta</td>
+    </tr>
+    {% for Comentario in comentarios_list %}
+    <tr>
+        <td>{{Comentario.articulo}}</td>
+        <td>{{Comentario.comentario}}</td>
+        <td>{{Comentario.comenta}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'home:listadoapp' %}">Listado</a>
+{% endblock %}

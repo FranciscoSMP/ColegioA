@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h1>Listado de datos</h1>
+<table>
+    <tr>
+        <td> Título </td>
+        <td> Descripción </td>
+        <td>Autoriza</td>
+    </tr>
+    {% for Articulo in articulos_list %}
+    <tr>
+        <td>{{Articulo.titulo}}</td>
+        <td>{{Articulo.descripcion}}</td>
+        <td>{{Articulo.autoriza}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'home:listadoapp' %}">Listado</a>
+{% endblock %}
