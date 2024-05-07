@@ -16,17 +16,7 @@
     </tr>
     {% endfor %}
 </table>
-<a href="{% url 'home:homeapp' %}">Home</a>
-<a href="{% url 'home:crearEstP' %}">Insertar</a>
-<a href="{% url 'home:crearEstAapp' %}">Insertar Autorización</a>
-<a href="{% url 'home:crearArtapp' %}">Insertar Artículo</a>
-<a href="{% url 'home:crearPubapp' %}">Insertar Publicación</a>
-<a href="{% url 'home:crearComeapp' %}">Insertar Comentario</a>
-<p>
-    <a href="{% url 'home:listadoAapp' %}">Listar Autorizaciones</a>
-    <a href="{% url 'home:listadoCapp' %}">Listar Comentarios</a>
-    <a href="{% url 'home:listadoArtiapp' %}">Listar Artículos</a>
-    <a href="{% url 'home:listadoPapp' %}">Listar Publicaciones</a>
-</p>
-
+<p><h3>Insertar Datos</h3></p>
+<a id="btnInsertar" class="btn btn-primary" href="{% url 'home:crearEstP'%}">Insertar</a>
+<a id="btnInicio" class="btn btn-primary" href="{% url 'home:homeapp'%}">Inicio</a>
 {% endblock %}

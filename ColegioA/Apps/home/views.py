@@ -10,7 +10,7 @@ class HomeView(TemplateView):
     template_name='home.html'
 
 class CrearEstudianteAView(CreateView):
-    template_name='crearEstudianteA.html'
+    template_name='CrearEstudianteA.html'
     form_class=EstudianteAForm
     success_url=reverse_lazy('home:listadoapp')
 

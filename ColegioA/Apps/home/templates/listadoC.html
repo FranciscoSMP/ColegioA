@@ -16,5 +16,7 @@
     </tr>
     {% endfor %}
 </table>
-<a href="{% url 'home:listadoapp' %}">Listado</a>
+<p><h3>Insertar Datos</h3></p>
+<a id="btnInsertar" class="btn btn-primary" href="{% url 'home:crearComeapp'%}">Insertar</a>
+<a id="btnInicio" class="btn btn-primary" href="{% url 'home:homeapp'%}">Inicio</a>
 {% endblock %}
