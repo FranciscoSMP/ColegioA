@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block contenido %}
+{% block content %}
+<center>
+    <h1 style="font-family: 'fangsong', 'fangsong'monospace; color: rgb(49,126,191);">Formulario para registrar un usuario</h1>
+</center>
+<body style="background-color: #dbeefc;">    
+    <form style="color: #0f0202; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 0.40cm;" method="POST">
+        {% csrf_token %}
+        Usuario: {{ form.username }}
+        Email: {{ form.email }}
+        Nombre: {{ form.first_name }}
+        Apellido: {{ form.last_name }}
+        Contraseña: {{ form.password1 }}
+        Confirmar Contraseña: {{ form.password2 }}
+        <input type="submit" name="Guardar" class="btn btn-dark btn-sm">
+    </form>
+<a id="Home" class="btn btn-primary" href="{% url 'home:homeapp'%}">Inicio</a>  
+{% endblock content %}
+{% endblock contenido %}
