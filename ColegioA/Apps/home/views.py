@@ -34,11 +34,6 @@ class CrearComentarioView(CreateView):
     form_class = ComentarioForm
     success_url = reverse_lazy('home:listadoapp')
 
-class RegistroView(CreateView):
-    model = Usuario
-    form_class = RegistroForm
-    success_url = reverse_lazy('home:homeapp')
-
 class ListarEstudiantesPView(ListView):
     template_name = 'listado.html'
     model = EstudiantesPublicaciones
