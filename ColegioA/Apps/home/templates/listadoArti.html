@@ -1,22 +1,26 @@
 {% extends 'base.html' %}
-
 {% block contenido %}
-<h1>Listado de datos</h1>
+<center>
+<h1 style="font-family: 'fangsong', 'fangsong'monospace; color: rgb(0, 125, 200);">Listado de Artículos</h1>
+<hr>
 <table>
     <tr>
-        <td> Título </td>
-        <td> Descripción </td>
-        <td>Autoriza</td>
+        <th style="border: 1px solid #ddd; padding: 3px; text-align: center; background-color: #f2f2f2;">Título</th>
+        <th style="border: 1px solid #ddd; padding: 3px; text-align: center; background-color: #f2f2f2;">Descripción</th>
+        <th style="border: 1px solid #ddd; padding: 3px; text-align: center; background-color: #f2f2f2;">Autoriza</th>
     </tr>
     {% for Articulo in articulos_list %}
     <tr>
-        <td>{{Articulo.titulo}}</td>
-        <td>{{Articulo.descripcion}}</td>
-        <td>{{Articulo.autoriza}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;">{{Articulo.titulo}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;">{{Articulo.descripcion}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;">{{Articulo.autoriza}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;"><a href="{% url 'home:editarArtiApp' Articulo.id %}" class="btn btn-dark btn-sm">Editar</td>
     </tr>
     {% endfor %}
 </table>
+<hr>
 <p><h3>Insertar Datos</h3></p>
 <a id="btnInsertar" class="btn btn-primary" href="{% url 'home:crearArtapp'%}">Insertar</a>
 <a id="btnInicio" class="btn btn-primary" href="{% url 'home:homeapp'%}">Inicio</a>
+</center>
 {% endblock %}

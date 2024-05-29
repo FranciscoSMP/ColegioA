@@ -17,18 +17,28 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from.views import *
+from django.contrib.auth.decorators import login_required
 
 app_name = 'home'
 urlpatterns = [
     path('', HomeView.as_view(), name='homeapp'),
-    path('listado/', ListarEstudiantesPView.as_view(), name='listadoapp'),
-    path('listadoA/', ListarEstudiantesAView.as_view(), name='listadoAapp'),
-    path('listadoC/', ListarComentarios.as_view(), name='listadoCapp'),
-    path('listadoArti/', ListarArticulos.as_view(), name='listadoArtiapp'),
-    path('listadoP/', ListarPublicaciones.as_view(), name='listadoPapp'),
-    path('crearEstA/,', CrearEstudianteAView.as_view(), name='crearEstAapp'),
-    path('crearEstP/,', CrearEstudiantePView.as_view(), name='crearEstP'),
-    path('crearArt/,', CrearArticuloView.as_view(), name='crearArtapp'),
-    path('crearPub/,', CrearPublicacionView.as_view(), name='crearPubapp'),
-    path('crearCome/,', CrearComentarioView.as_view(), name='crearComeapp'),
+    path('listado/', login_required(ListarEstudiantesPView.as_view()), name='listadoapp'),
+    path('listadoA/', login_required(ListarEstudiantesAView.as_view()), name='listadoAapp'),
+    path('listadoC/', login_required(ListarComentarios.as_view()), name='listadoCapp'),
+    path('listadoArti/', login_required(ListarArticulos.as_view()), name='listadoArtiapp'),
+    path('listadoP/', login_required(ListarPublicaciones.as_view()), name='listadoPapp'),
+    path('editarEP/<int:pk>', EditarEstudiantePView.as_view(), name = 'editarEApp'),
+    path('editarEA/<int:pk>', EditarEstudianteAView.as_view(), name = 'editarEAApp'),
+    path('editarArt/<int:pk>', EditarArticuloView.as_view(), name = 'editarArtiApp'),
+    path('editarPub/<int:pk>', EditarPublicacionView.as_view(), name = 'editarPubApp'),
+    path('editarCome/<int:pk>', EditarComentarioView.as_view(), name = 'editarComeApp'),
+    path('crearEstA/', login_required(CrearEstudianteAView.as_view()), name='crearEstAapp'),
+    path('crearEstP/', login_required(CrearEstudiantePView.as_view()), name='crearEstP'),
+    path('crearArt/', login_required(CrearArticuloView.as_view()), name='crearArtapp'),
+    path('crearPub/', login_required(CrearPublicacionView.as_view()), name='crearPubapp'),
+    path('crearCome/', login_required(CrearComentarioView.as_view()), name='crearComeapp'),
+    path('registro/', login_required(RegistroView.as_view()), name='registroApp'),
+    path('login/', Login, name = 'loginapp'),
+    path('logout/', Logout, name = 'logoutapp')
 ]
+    

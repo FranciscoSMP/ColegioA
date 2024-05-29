@@ -1,22 +1,26 @@
 {% extends 'base.html' %}
-
 {% block contenido %}
-<h1>Listado de datos</h1>
+<center>
+<h1 style="font-family: 'fangsong', 'fangsong'monospace; color: rgb(0, 125, 200);">Listado de Datos</h1>
+<hr>
 <table>
     <tr>
-        <td> Carne </td>
-        <td> Nombre </td>
-        <td>Apellido</td>
+        <th style="border: 1px solid #ddd; padding: 3px; text-align: center; background-color: #f2f2f2;">Carne</th>
+        <th style="border: 1px solid #ddd; padding: 3px; text-align: center; background-color: #f2f2f2;">Nombre</th>
+        <th style="border: 1px solid #ddd; padding: 3px; text-align: center; background-color: #f2f2f2;">Apellido</th>
     </tr>
     {% for Publicar in estudiantespublicaciones_list %}
     <tr>
-        <td>{{Publicar.carne}}</td>
-        <td>{{Publicar.nombre}}</td>
-        <td>{{Publicar.apellido}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;">{{Publicar.carne}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;">{{Publicar.nombre}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;">{{Publicar.apellido}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;"><a href="{% url 'home:editarEApp' Publicar.id %}" class="btn btn-dark btn-sm">Editar</td>
     </tr>
     {% endfor %}
 </table>
+<hr>
 <p><h3>Insertar Datos</h3></p>
 <a id="btnInsertar" class="btn btn-primary" href="{% url 'home:crearEstP'%}">Insertar</a>
 <a id="btnInicio" class="btn btn-primary" href="{% url 'home:homeapp'%}">Inicio</a>
+</center>
 {% endblock %}

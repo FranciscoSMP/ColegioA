@@ -1,39 +1,7 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-    <h1>Bienvenidos a mi sitio web en Django</h1>
-    <h2 align="center">Menú</h2>
-    <hr></hr>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">   
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Insertar
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'home:crearEstP' %}">Estudiantes Publicaciones</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home:crearEstAapp' %}">Estudiantes Autorizaciones</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home:crearArtapp' %}">Artículos</a></li>                
-                  <li><a class="dropdown-item" href="{% url 'home:crearPubapp' %}">Publicaciones</a></li>                
-                  <li><a class="dropdown-item" href="{% url 'home:crearComeapp' %}">Comentarios</a></li>                
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Listar
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'home:listadoapp' %}">Estudiantes Publicaciones</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home:listadoAapp' %}">Estudiantes Autorizaciones</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home:listadoArtiapp' %}">Artículos</a></li>                
-                  <li><a class="dropdown-item" href="{% url 'home:listadoPapp' %}">Publicaciones</a></li>                
-                  <li><a class="dropdown-item" href="{% url 'home:listadoCapp' %}">Comentarios</a></li>                
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+<hr></hr>
+<h1 class="display-1 lh-1 mb-3" align="center">Bienvenidos a mi sitio web en Django</h1>
+<hr></hr>
 {% endblock %}

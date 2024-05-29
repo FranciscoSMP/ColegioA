@@ -1,22 +1,26 @@
 {% extends 'base.html' %}
-
 {% block contenido %}
-<h1>Listado de datos</h1>
+<center>
+<h1 style="font-family: 'fangsong', 'fangsong'monospace; color: rgb(0, 125, 200)">Listado de Comentarios</h1>
+<hr>
 <table>
     <tr>
-        <td> Artículo </td>
-        <td> Comentario </td>
-        <td>Comenta</td>
+        <th style="border: 1px solid #ddd; padding: 3px; text-align: center; background-color: #f2f2f2;">Artículo</th>
+        <th style="border: 1px solid #ddd; padding: 3px; text-align: center; background-color: #f2f2f2;">Comentario</th>
+        <th style="border: 1px solid #ddd; padding: 3px; text-align: center; background-color: #f2f2f2;">Comenta</th>
     </tr>
     {% for Comentario in comentarios_list %}
     <tr>
-        <td>{{Comentario.articulo}}</td>
-        <td>{{Comentario.comentario}}</td>
-        <td>{{Comentario.comenta}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;">{{Comentario.articulo}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;">{{Comentario.comentario}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;">{{Comentario.comenta}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;"><a href="{% url 'home:editarComeApp' Comentario.id %}" class="btn btn-dark btn-sm">Editar</td>
     </tr>
     {% endfor %}
 </table>
-<p><h3>Insertar Datos</h3></p>
+<hr>
+<p><h3>Insertar Comentario</h3></p>
 <a id="btnInsertar" class="btn btn-primary" href="{% url 'home:crearComeapp'%}">Insertar</a>
 <a id="btnInicio" class="btn btn-primary" href="{% url 'home:homeapp'%}">Inicio</a>
+</center>
 {% endblock %}

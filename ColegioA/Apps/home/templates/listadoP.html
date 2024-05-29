@@ -1,20 +1,24 @@
 {% extends 'base.html' %}
-
 {% block contenido %}
-<h1>Listado de datos</h1>
+<center>
+<h1 style="font-family: 'fangsong', 'fangsong'monospace; color: rgb(0, 125, 200);">Listado de Publicaciones</h1>
+<hr>
 <table>
     <tr>
-        <td> Artículo </td>
-        <td> Publica </td>
+        <th style="border: 1px solid #ddd; padding: 3px; text-align: center; background-color: #f2f2f2;">Artículo</th>
+        <th style="border: 1px solid #ddd; padding: 3px; text-align: center; background-color: #f2f2f2;">Publica</th>
     </tr>
     {% for Publicacion in publicaciones_list %}
     <tr>
-        <td>{{Publicacion.articulo}}</td>
-        <td>{{Publicacion.publica}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;">{{Publicacion.articulo}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;">{{Publicacion.publica}}</td>
+        <td style="border: 1px solid #ddd; padding: 3px; text-align: center;"><a href="{% url 'home:editarPubApp' Publicacion.id %}" class="btn btn-dark btn-sm">Editar</td>
     </tr>
     {% endfor %}
 </table>
+<hr>
 <p><h3>Insertar Datos</h3></p>
 <a id="btnInsertar" class="btn btn-primary" href="{% url 'home:crearPubapp'%}">Insertar</a>
 <a id="btnInicio" class="btn btn-primary" href="{% url 'home:homeapp'%}">Inicio</a>
+</center>
 {% endblock %}
